@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube Clone</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f9f9f9;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 20px;
+  background:white;
+  border-bottom:1px solid #ddd;
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+#menuBtn{
+  font-size:20px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.logo{
+  color:red;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.header input{
+  width:40%;
+  padding:7px;
+}
+
+/* LAYOUT */
+.container{
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:200px;
+  background:white;
+  padding:15px;
+  height:calc(100vh - 60px);
+}
+
+.sidebar p{
+  margin:12px 0;
+  cursor:pointer;
+}
+
+/* VIDEOS */
+.videos{
+  flex:1;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:15px;
+}
+
+.video-card{
+  background:white;
+  padding:10px;
+}
+
+.thumb{
+  height:140px;
+  background:#ccc;
+  margin-bottom:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="left">
+    <button id="menuBtn">☰</button>
+    <span class="logo">YouTube</span>
+  </div>
+
+  <input type="text" placeholder="Search">
+  <div>👤</div>
+</header>
+
+<div class="container">
+  <aside class="sidebar" id="sidebar">
+    <p>🏠 Home</p>
+    <p>🔥 Shorts</p>
+    <p>📺 Subscriptions</p>
+    <hr>
+    <p>📚 Library</p>
+    <p>🕒 History</p>
+  </aside>
+
+  <main class="videos">
+    <div class="video-card">
+      <div class="thumb"></div>
+      <h4>Sample Video</h4>
+      <p>Channel Name</p>
+      <small>120K views</small>
+    </div>
+
+    <div class="video-card">
+      <div class="thumb"></div>
+      <h4>HTML Tutorial</h4>
+      <p>Code Channel</p>
+      <small>300K views</small>
+    </div>
+
+    <div class="video-card">
+      <div class="thumb"></div>
+      <h4>CSS Basics</h4>
+      <p>Design Hub</p>
+      <small>98K views</small>
+    </div>
+  </main>
+</div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.onclick = () => {
+  sidebar.style.display =
+    sidebar.style.display === "none" ? "block" : "none";
+};
+</script>
+
+</body>
+</html>
